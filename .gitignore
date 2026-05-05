@@ -50,3 +50,6 @@ Thumbs.db
 .ruff_cache/
 .mypy_cache/
 .pytest_cache/
+
+# Cursor
+.cursor/
