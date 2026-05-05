@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Data
+data/raw/
+data/processed/
+data/splits/
+!data/.gitkeep
+results/experiments/
+*.pth
+*.pt
+*.ckpt
+
+# Logs & profiles
+*.log
+logs/
+tensorboard/
+wandb/
+mlruns/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Ruff
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/

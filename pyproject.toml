@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robust-object-detection"
+version = "0.1.0"
+description = "Robust Object Detection in Satellite Images under Distribution Shift"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "pytorch>=2.0.0",
+    "mmdet>=3.0.0",
+    "detectron2>=0.6",
+    "tensorboard>=2.13.0",
+    "pycocotools>=2.0.7",
+    "albumentations>=1.3.1",
+    "omegaconf>=2.3.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "tqdm>=4.65.0",
+    "scikit-learn>=1.3.0",
+    "Pillow>=10.0.0",
+    "opencv-python>=4.8.0",
+    "einops>=0.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+    "black>=23.7.0",
+    "ipykernel>=6.25.0",
+    "jupyter>=1.0.0",
+]
+
+[project.scripts]
+rod-train = "scripts.train:main"
+rod-evaluate = "scripts.evaluate:main"
+rod-analyze = "scripts.analyze:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
