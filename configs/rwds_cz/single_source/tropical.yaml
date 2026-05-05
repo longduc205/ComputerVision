@@ -1,0 +1,29 @@
+# @package _global_
+defaults:
+  - base/base_data
+  - base/base_training
+  - base/base_augmentation
+
+framework: mmdet
+
+dataset:
+  name: rwds_cz
+  variant: rwds_cz
+  domain: tropical
+  data_root: data/processed/rwds_cz
+  split: train
+
+model:
+  framework: mmdet
+  num_classes: 16
+  backbone: resnet50
+  neck: fpn
+  config_path: null
+  checkpoint_path: null
+
+training:
+  epochs: 50
+  checkpoint_dir: results/experiments
+
+evaluation:
+  val_ann_file: data/splits/rwds_cz_val.json

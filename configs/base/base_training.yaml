@@ -1,0 +1,17 @@
+# @package _global_
+
+training:
+  epochs: 50
+  batch_size: 4
+  optimizer:
+    type: SGD
+    lr: 0.02
+    momentum: 0.9
+    weight_decay: 0.0001
+  scheduler:
+    type: StepLR
+    step_size: 10
+    gamma: 0.1
+  device: cuda
+  seed: 42
+  num_workers: 4

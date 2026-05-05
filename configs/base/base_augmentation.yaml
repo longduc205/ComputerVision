@@ -1,0 +1,24 @@
+# @package _global_
+
+augmentation:
+  train:
+    - Resize:
+        target_size: 512
+    - RandomFlip:
+        h_prob: 0.5
+        v_prob: 0.0
+    - ColorJitter:
+        brightness: 0.2
+        contrast: 0.2
+        saturation: 0.2
+        hue: 0.1
+        prob: 0.5
+    - GaussianBlur:
+        kernel_size: 5
+        prob: 0.3
+    - WeatherSimulation:
+        fog_prob: 0.1
+        rain_prob: 0.1
+  val:
+    - Resize:
+        target_size: 512

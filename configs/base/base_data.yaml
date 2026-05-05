@@ -1,0 +1,9 @@
+# @package _global_
+
+data:
+  image_size: 512
+  data_root: data/processed
+  num_classes: 16
+  normalize:
+    mean: [123.675, 116.28, 103.53]
+    std: [58.395, 57.12, 57.375]

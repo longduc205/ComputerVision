@@ -1,0 +1,26 @@
+# @package _global_
+defaults:
+  - base/base_data
+  - base/base_training
+  - base/base_augmentation
+
+framework: mmdet
+
+dataset:
+  name: rwds_cz
+  variant: rwds_cz
+  domains: [tropical, arid]
+  data_root: data/processed/rwds_cz
+
+model:
+  framework: mmdet
+  num_classes: 16
+  backbone: resnet50
+  neck: fpn
+
+training:
+  multi_source: true
+  domain_ratios: [0.5, 0.5]
+  checkpoint_dir: results/experiments
+
+dg_technique: none
